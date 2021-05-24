@@ -1,0 +1,30 @@
+*{
+    outline: 0px dashed green;
+}
+#main-container{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+}
+
+.btn{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 2px 2px gray;
+    user-select: none;
+}
+    .btn:hover{
+        cursor: pointer;
+        box-shadow: 0 0 5px gray;
+    }
+
+#resetBtn{
+    float: right;
+    bottom: 0px;
+    background-color: red;
+    color: white;
+    border-radius: 0px;
+}
