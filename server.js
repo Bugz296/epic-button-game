@@ -10,8 +10,8 @@ app.use(express.static(__dirname));
 app.set('views', __dirname+'/views');
 app.set('view engine', 'ejs');
 
-const server = app.listen(8000, function(){
-    console.log("Listening to Port 8000");
+const server = app.listen(3003, function(){
+    console.log("Listening to Port 3003");
 });
 const io = require('socket.io')(server);
 
@@ -34,10 +34,10 @@ io.on('connection', function(socket){
 /**
  * Routes
  */
-app.get('/', function(req, res){
+app.get('/assignments/ebg/', function(req, res){
     res.render('index', {user_data: "Hey"});
 });
 
-app.post('/users', function(req, res){
+app.post('/assignments/ebg/users', function(req, res){
     res.render('users', {user: req.body});
 });
