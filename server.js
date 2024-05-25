@@ -15,6 +15,11 @@ const server = app.listen(3003, function(){
 });
 const io = require('socket.io')(server);
 
+app.use((req, res, next) => {
+    req.url = '/assignments/ebg' + req.url;
+    next();
+});
+
 /* Socket Event Listener */
 let count = 0;
 io.on('connection', function(socket){
@@ -34,10 +39,10 @@ io.on('connection', function(socket){
 /**
  * Routes
  */
-app.get('/assignments/ebg/', function(req, res){
+app.get('/', function(req, res){
     res.render('index', {user_data: "Hey"});
 });
 
-app.post('/assignments/ebg/users', function(req, res){
+app.post('/users', function(req, res){
     res.render('users', {user: req.body});
 });
