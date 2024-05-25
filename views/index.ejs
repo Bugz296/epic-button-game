@@ -10,7 +10,7 @@
         <title>Epic Button Game</title>
         <script>
             $(document).ready(function(){
-                var socket = io();
+                var socket = io('/', { path: '/assignments/ebg/socket.io' });
                 /* When submit button is clicked */
                 $('#epicBtn').click(function(){
                     socket.emit('update_count');
